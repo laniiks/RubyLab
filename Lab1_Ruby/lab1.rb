@@ -35,6 +35,7 @@ def main
             a = gets.to_i
             puts "Введите второе число: "
             b = gets.to_i
+            puts "Ответ: "
             puts Summ(a, b)
         else
             break
