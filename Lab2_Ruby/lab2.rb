@@ -1,19 +1,17 @@
 def firstScript(word)
-  if word.end_with?('cs') || word.end_with?('CS')
-    length = word.length
-    number = 2**length
-    puts "Длина слова #{length}"
-    puts "2 в степени #{length} = #{number}"
+  word2 = word.split(' ')[1].downcase
+  if word2.end_with?('cs')
+    puts "Длина слова #{word2.length}"
+    puts "2 в степени #{word2.length} = #{2**word2.length}"
   else
-    reverse = word.reverse!
-    puts "Слово #{word} задом наперед #{reverse}"
+    puts "Слово #{word2} задом наперед #{word2.reverse}"
   end
 end
 
 def secondScript(size)
   pokemon = {}
   i = 1
-  while i <= size
+  size.times do
     puts "Введите имя и цвет покемона №#{i}"
     print 'Имя: '
     name = gets.chomp
