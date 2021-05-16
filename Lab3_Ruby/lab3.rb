@@ -1,7 +1,7 @@
 
 def FirstTask(age)
-  file = File.open('Lab3_Ruby/file.txt')
-  result = File.open('Lab3_Ruby/result.txt', 'w')
+  file = File.open('file.txt')
+  result = File.open('result.txt', 'w')
   file_data = file.readlines.map(&:chomp)
   i = 0
   while i < file_data.length
@@ -11,10 +11,10 @@ def FirstTask(age)
   end
   file.close
   result.close
-  puts(file_data = File.read('Lab3_Ruby/result.txt').split("\n"))
+  puts(file_data = File.read('result.txt').split("\n"))
 end
 
-PATH = 'Lab3_Ruby/balance.txt'.freeze
+PATH = 'balance.txt'.freeze
 STARTING_BALANCE = 100
 
 def balanceFile
@@ -74,7 +74,7 @@ def main
       print 'Введите возраст студентов: '
       age = gets.chomp
       FirstTask(age)
-      puts(file_data = File.read('Lab3_Ruby/result.txt').split("\n"))
+      puts(file_data = File.read('result.txt').split("\n"))
     when '2'
       loop do
         puts 'Выберите, что хотите сделать:'
