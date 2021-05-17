@@ -1,0 +1,13 @@
+<h2>Edit lab reports</h2>
+<%= form_for :lab_reports, url: lab_report_path(@lab_reports), method: :patch do |f| %>
+    <p>
+        Name<br>
+    </p>
+        <%= f.text_field(:title, {:class =>'form-control'}) %>
+    <p>
+        Description<br>
+    </p>
+        <%= f.text_area(:description, {:class => 'form-control'}) %>
+        <br>
+        <%= f.submit({:class => 'btn btn-success'}) %>
+<% end %>

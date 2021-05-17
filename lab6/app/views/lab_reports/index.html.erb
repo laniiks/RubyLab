@@ -1,0 +1,10 @@
+<h1>Labs reports</h1>
+<% LabReport.all.each do |lab| %>
+    <div class="alert alert-light">
+        <h3><%= lab.title %></h3>
+        <p><%= lab.description %></p>
+        <%= link_to "Читать далее", lab_report_path(lab), :class => 'btn btn-outline-primary'%>
+        
+    </div>
+    
+<% end %>

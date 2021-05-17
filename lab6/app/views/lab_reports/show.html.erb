@@ -1,0 +1,33 @@
+<h2>
+    Title: <%=@lab_report.title %><br>
+</h2>
+<p>    
+    Description:<br>
+    <%=@lab_report.description %><br>
+    Date: <%=@lab_report.created_at %>
+</p>
+<hr>
+<%= link_to "Edit", edit_lab_report_path(@lab_report), :class => 'btn btn-warning' %>
+<%= link_to "Delete", lab_report_path(@lab_report), method: :delete, data: {confirm: "Delete a report?"}, :class => 'btn btn-danger' %>
+
+<% @lab_report.marks.each do |mark| %>
+    <div class="alert alert-light">
+        <h3><%= mark.points %><%= mark.letter %></h3>
+    </div>
+    
+<% end %>
+
+
+<h2>Add mark</h2>
+        <%= form_for([@lab_report, @lab_report.marks.build]) do |f| %>
+            <p>
+                Points<br>
+            </p>
+                <%= f.text_field(:points, {:class =>'form-control'}) %>
+            <p>
+                Letter<br>
+            </p>
+                <%= f.text_field(:letter, {:class => 'form-control'}) %>
+                <br>
+                <%= f.submit("Add mark", {:class => 'btn btn-success'}) %>
+        <% end %>

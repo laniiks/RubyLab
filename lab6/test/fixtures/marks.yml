@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  points: 1
+  letter: MyString
+  created_at: 2021-05-17 17:58:01
+  lab_report: one
+
+two:
+  points: 1
+  letter: MyString
+  created_at: 2021-05-17 17:58:01
+  lab_report: two
